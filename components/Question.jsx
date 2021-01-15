@@ -37,7 +37,7 @@ export default function Question({ question }){
         {question ? <Card.Body>
             <h4>{question.question_text}</h4>
             <hr/>
-            {(question.options.concat(question.correct_answer)).map((answer, idx)=>{
+            {(question.options.concat(question.correct_answer).sort()).map((answer, idx)=>{
                 return ( <h4 key={idx}>
                             <Form.Check type="radio" 
                                 onChange={e => {setAnswer(e.target.value)}}  value={answer} name="options" label={answer} />
