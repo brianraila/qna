@@ -27,7 +27,7 @@ export default function Question({ question }){
         setEvaluated(response.data)
         setTimeout(function(){
             setEvaluated(null)
-            router.push('/')}, 2500)
+            router.push('/')}, 3000)
     }
 
     return(

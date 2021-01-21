@@ -19,7 +19,7 @@ export default async (req, res) => {
                     q.Create(q.Collection('answers'), 
                         { data : { question_id, user_id, isCorrect: isCorrect, response: answer }})
                 )
-                query.data.correct = answer
+                query.data.correct = question.correct_answer
                 res.json({ ref: query.ref.id, data: query.data })  
             }catch(error){
                 if(error.message === 'instance not unique'){
